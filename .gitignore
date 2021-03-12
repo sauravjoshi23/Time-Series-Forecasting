@@ -148,5 +148,8 @@ __pycache__/
 *.jpg
 .jpeg
 *.jpeg
+plotly.js-1.58.4
+/plotly.js-1.58.4
+plotly.js-1.58.4/
 
 debug.txt

@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        Index page
+    </title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!--    passing data from view to js file-->
+    <script>
+        const model_data = "{{ model_data|escapejs }}";
+    </script>
+
+</head>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 11px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF90;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #4CAF90;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+    <div>
+        <h2>Trend of Available Data</h2>
+    </div>
+
+<!--    Trend of available data-->
+    <div id="chart"></div>
+
+
+
+<!--    Trend of future data-->
+    <div>
+        <h2>Trend of Future Data</h2>
+    </div>
+     <div>
+      <form id="form" action="" method="POST">
+        {% csrf_token %}
+          <label for="weeks"><b>Number of Weeks</b></label>
+        <input type="text" id="weeks" name="weeks" placeholder="No. of weeks in the future...">
+          <label for="weeks"><b>Confidence</b></label>
+        <input type="text" id="ci" name="ci" placeholder="Confidence Value... 100% confidence is between -inf to inf">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div id="futureweeks"></div>
+
+
+
+
+
+
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/plotly.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/futureweeks.js' %}"></script>
+
+</body>
+</html>
+
+
+
+
