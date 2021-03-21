@@ -73,6 +73,22 @@ div {
 
     <div id="futureweeks"></div>
 
+    <!--    Trend of past data-->
+    <div>
+        <h2>Trend of Past Data</h2>
+    </div>
+     <div>
+      <form id="form2" action="" method="POST">
+        {% csrf_token %}
+          <label for="weeks2"><b>Number of Weeks</b></label>
+        <input type="text" id="weeks2" name="weeks2" placeholder="No. of weeks in the recent past...">
+          <label for="weeks2"><b>Confidence</b></label>
+        <input type="text" id="ci2" name="ci2" placeholder="Confidence Value... 100% confidence is between -inf to inf">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div id="pastweeks"></div>
 
 
 
@@ -82,6 +98,7 @@ div {
     <script type="text/javascript" src="{% static 'js/plotly.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/futureweeks.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/pastweeks.js' %}"></script>
 
 </body>
 </html>

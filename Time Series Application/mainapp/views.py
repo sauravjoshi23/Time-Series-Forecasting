@@ -6,6 +6,7 @@ from django.http import HttpResponse
 import json
 from .models import *
 from .futureweeksprediction import *
+from .pastweeksprediction import *
 
 # Create your views here.
 def index(request):
@@ -27,6 +28,19 @@ def futureweeks(request):
         ci = request.POST.get('ci', None)
         if weeks and int(ci) != 100:
             futureweekslist = futureweeksprediction(int(weeks), int(ci))
+            print(futureweekslist)
             responsejson = json.dumps(futureweekslist)
+            print('Below: ', responsejson)
+            return JsonResponse(responsejson, safe=False)
+
+# Endpoint 2 for past recent weeks form
+def pastweeks(request):
+    if request.method == 'POST':
+        weeks = request.POST.get('weeks', None)
+        ci = request.POST.get('ci', None)
+        if weeks and int(ci) != 100:
+            pastweekslist = pastweeksprediction(int(weeks), int(ci))
+            print(pastweekslist)
+            responsejson = json.dumps(pastweekslist)
             print('Below: ', responsejson)
             return JsonResponse(responsejson, safe=False)
