@@ -67,29 +67,29 @@ function pastweeksjs(send) {
     var trace1 = {
       x: dates,
       y: mean_ci_lower,
-      type: 'scatter',
+      mode: 'lines',
       name:'mean_ci_lower'
     };
 
     var trace2 = {
       x: dates,
       y: sales,
-      type: 'scatter',
-      'name':'sales'
+      mode: 'lines',
+      name:'sales'
     };
 
     var trace3 = {
       x: dates,
       y: mean_ci_upper,
-      type: 'scatter',
-      'name':'mean_ci_upper'
+      mode: 'lines',
+      name:'mean_ci_upper'
     };
 
     var trace4 = {
       x: dates,
       y: true_sales,
-      type: 'scatter',
-      'name':'true_sales'
+      mode: 'markers',
+      name:'true_sales'
     };
 
     var plot_data = [trace1, trace2,trace3,trace4];
