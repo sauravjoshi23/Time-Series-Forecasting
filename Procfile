@@ -1,0 +1,1 @@
+web: gunicorn Time_Series_Application.wsgi
