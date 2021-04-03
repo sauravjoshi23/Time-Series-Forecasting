@@ -31,7 +31,7 @@ rfc3986==1.4.0
 sanic==19.12.5
 Sanic-Cors==0.10.0.post3
 Sanic-Plugins-Framework==0.9.5
-scipy==1.6.2
+scipy==1.5.4
 six==1.15.0
 sniffio==1.2.0
 sqlparse==0.4.1
