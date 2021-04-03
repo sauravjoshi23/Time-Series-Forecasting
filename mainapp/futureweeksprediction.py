@@ -1,6 +1,7 @@
 import os
-import pickle
+#import pickle
 import pandas as pd
+import joblib
 
 
 #Load Model
@@ -8,13 +9,13 @@ def futureweeksprediction(n, ci):
 
     ci = (100-ci)*0.01
 
-    with open('model_superstore_sales.pkl', 'rb') as file:
-        print('Model Loaded')
-        model = pickle.load(file)
-        print(model)
+    # with open('model_superstore_sales.pkl', 'rb') as file:
+    #     print('Model Loaded')
+    #     model = pickle.load(file)
+    #     print(model)
 
-    # print('Model Loaded Future')
-    # model = pd.read_pickle('model_superstore_sales.pkl')
+    print('Model Loaded Future')
+    model = joblib.load('model_superstore_sales.pkl')
 
     forecast = model.forecast(steps=n) # making a forecast of n weeks later of the last date in the 'Date' column
 
