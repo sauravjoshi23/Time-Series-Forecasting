@@ -1,5 +1,5 @@
 import os
-import pickle
+#import pickle
 import pandas as pd
 
 #Load Model
@@ -7,10 +7,13 @@ def pastweeksprediction(n, ci):
 
     ci = (100-ci)*0.01
 
-    with open('model_superstore_sales.pkl', 'rb') as file:
-        print('Model Loaded')
-        model = pickle.load(file)
-        print(model)
+    # with open('model_superstore_sales.pkl', 'rb') as file:
+    #     print('Model Loaded')
+    #     model = pickle.load(file)
+    #     print(model)
+
+    print('Model Loaded Past')
+    model = pd.read_pickle('model_superstore_sales.pkl')
 
     data = pd.read_csv('Weekly_data.csv', index_col=0, parse_dates=True)
 
