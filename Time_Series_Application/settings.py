@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY='6s$an^9j1l746sw3!8@a#p-@!$g)r!k$+7n7=!nzgg(a$+hx9n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['127.0.0.1','timeseries-application.herokuapp.com']

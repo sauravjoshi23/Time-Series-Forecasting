@@ -16,6 +16,8 @@ var cnt = 0
 var data = model_data.replace(/'/g, '"');
 data = JSON.parse(data)
 var len = data.length
+console.log(len)
+console.log(data)
 
 Plotly.plot('chart',[{
         x:[getX(cnt, data)],
