@@ -19,7 +19,6 @@ hyperframe==5.2.0
 idna==2.10
 MarkupPy==1.14
 multidict==5.0.0
-numpy==1.20.2
 odfpy==1.4.1
 openpyxl==3.0.7
 pandas==1.2.3
