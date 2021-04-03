@@ -15,7 +15,7 @@ def futureweeksprediction(n, ci):
     #     print(model)
 
     print('Model Loaded Future')
-    model = joblib.load('model_superstore_sales.pkl')
+    model = joblib.load('model_superstore_sales.sav')
 
     forecast = model.forecast(steps=n) # making a forecast of n weeks later of the last date in the 'Date' column
 

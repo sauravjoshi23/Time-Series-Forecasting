@@ -14,7 +14,7 @@ def pastweeksprediction(n, ci):
     #     print(model)
 
     print('Model Loaded Past')
-    model = joblib.load('model_superstore_sales.pkl')
+    model = joblib.load('model_superstore_sales.sav')
 
     data = pd.read_csv('Weekly_data.csv', index_col=0, parse_dates=True)
 
