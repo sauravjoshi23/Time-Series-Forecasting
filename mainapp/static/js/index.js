@@ -19,11 +19,21 @@ var len = data.length
 console.log(len)
 console.log(data)
 
+var layout = {
+  yaxis: {
+    title: {
+      text: 'Sales',
+    }
+  }
+};
+
 Plotly.plot('chart',[{
         x:[getX(cnt, data)],
         y:[getY(cnt, data)],
         type:'linear'
-}]);
+}], layout);
+
+
 
 setInterval(function() {
     cnt += 1

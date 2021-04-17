@@ -94,7 +94,15 @@ function pastweeksjs(send) {
 
     var plot_data = [trace1, trace2,trace3,trace4];
 
-    Plotly.newPlot('pastweeks', plot_data);
+    var layout = {
+      yaxis: {
+        title: {
+          text: 'Sales',
+        }
+      }
+    };
+
+    Plotly.newPlot('pastweeks', plot_data, layout);
 
 
 //    Plotly.plot('futureweeks',[{
